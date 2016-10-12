@@ -1,6 +1,12 @@
 <html>
 <head>
 <title>Calculator!</title>
+
+<script
+			  src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
+
 </head>
 <body style="background:#EEE">
 
@@ -42,37 +48,37 @@ padding:20px; margin:10px;
 </style>
 
 <div style="margin: 0 auto;" id="container">
-    <div id="screen">
-    I am a calculator!
-    </div>
+    <div id="screen"></div>
 
     <div id="controls">
 
-        <button id="div" class="ctrlr">/</button>
-        <button id="mult" class="ctrlr">*</button>
-        <button id="add" class="ctrlr">+</button>
-        <button id="subt" class="ctrlr">-</button>
+        <button id="div" class="ctrlr math">/</button>
+        <button id="mult" class="ctrlr math">*</button>
+        <button id="add" class="ctrlr math">+</button>
+        <button id="subt" class="ctrlr math">-</button>
+        <button id="lparen" class="ctrlr math">(</button>
+        <button id="rparen" class="ctrlr math">)</button>
     </div>
 
     <div id="number grid">
         <div class="number-row">
-            <button id="1" class="number">1</button>
-            <button id="2" class="number">2</button>
-            <button id="3" class="number">3</button>
+            <button id="1" class="number math">1</button>
+            <button id="2" class="number math">2</button>
+            <button id="3" class="number math">3</button>
         </div>
         <div class="number-row">
-            <button id="4" class="number">4</button>
-            <button id="5" class="number">5</button>
-            <button id="6" class="number">6</button>
+            <button id="4" class="number math">4</button>
+            <button id="5" class="number math">5</button>
+            <button id="6" class="number math">6</button>
         </div>
         <div class="number-row">
-            <button id="7" class="number">7</button>
-            <button id="8" class="number">8</button>
-            <button id="9" class="number">9</button>
+            <button id="7" class="number math">7</button>
+            <button id="8" class="number math">8</button>
+            <button id="9" class="number math">9</button>
         </div>
         <div class="number-row">
             <button id="clear" class="number">C</button>
-            <button id="ZERO" class="number">0</button>
+            <button id="ZERO" class="number math">0</button>
             <button id="equals" class="number">=</button>
         </div>
     </div>
@@ -82,6 +88,30 @@ padding:20px; margin:10px;
 <style>
     .number-row { background: green; text-align:center; }
 </style>
+
+<script>
+$(document).ready(function(){
+  $(".math").click(function() {
+      document.getElementById("screen").innerHTML = document.getElementById("screen").innerHTML + this.innerHTML;
+  });
+
+  $("#clear").click(function() {
+      document.getElementById("screen").innerHTML = "";
+  });
+
+
+
+  $("#equals").click(function() {
+    var result;
+    result = eval(document.getElementById("screen").innerHTML.toString());
+    document.getElementById("screen").innerHTML = result;
+  });
+
+});
+
+
+</script>
+
 
 </body>
 </html>
