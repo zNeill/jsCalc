@@ -25,7 +25,6 @@
     min-height:100px;
     min-width:300px;
     text-align:right;
-    width:100%;
 
     color:#000;
     background:#CCC;
@@ -49,7 +48,7 @@ padding:20px; margin:10px;
 </style>
 
 <div style="margin: 0 auto;" id="container">
-    <textarea id="screen"></textarea>
+    <div id="screen"></div>
 
     <div id="controls">
 
@@ -57,6 +56,8 @@ padding:20px; margin:10px;
         <button id="mult" class="ctrlr math">*</button>
         <button id="add" class="ctrlr math">+</button>
         <button id="subt" class="ctrlr math">-</button>
+        <button id="lparen" class="ctrlr math">(</button>
+        <button id="rparen" class="ctrlr math">)</button>
     </div>
 
     <div id="number grid">
@@ -98,6 +99,13 @@ $(document).ready(function(){
       document.getElementById("screen").innerHTML = "";
   });
 
+
+
+  $("#equals").click(function() {
+    var result;
+    result = eval(document.getElementById("screen").innerHTML.toString());
+    document.getElementById("screen").innerHTML = result;
+  });
 
 });
 
