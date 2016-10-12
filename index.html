@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Calculator!</title>
+</head>
+<body style="background:#EEE">
+
+<style>
+
+.number-row { background:#BBB; text-align:center; }
+.number-row > button { display:inline; }
+
+.number { padding: 50px; margin: 5px; font-size:20px}
+
+#screen {
+    font-family:"Courier New", Courier, monospace;
+    font-size:30px;
+    padding:20px;
+    color:#FFF;
+    min-height:100px;
+    min-width:300px;
+    text-align:right;
+
+    color:#000;
+    background:#CCC;
+}
+
+
+#controls > button { display:inline; margin: 20px; }
+
+#controls {
+    background:#000; text-align:center;
+}
+
+.ctrlr {
+padding:20px; margin:10px;
+}
+
+#container {
+
+    border:2px solid black;
+}
+</style>
+
+<div style="margin: 0 auto;" id="container">
+    <div id="screen">
+    I am a calculator!
+    </div>
+
+    <div id="controls">
+
+        <button id="div" class="ctrlr">/</button>
+        <button id="mult" class="ctrlr">*</button>
+        <button id="add" class="ctrlr">+</button>
+        <button id="subt" class="ctrlr">-</button>
+    </div>
+
+    <div id="number grid">
+        <div class="number-row">
+            <button id="1" class="number">1</button>
+            <button id="2" class="number">2</button>
+            <button id="3" class="number">3</button>
+        </div>
+        <div class="number-row">
+            <button id="4" class="number">4</button>
+            <button id="5" class="number">5</button>
+            <button id="6" class="number">6</button>
+        </div>
+        <div class="number-row">
+            <button id="7" class="number">7</button>
+            <button id="8" class="number">8</button>
+            <button id="9" class="number">9</button>
+        </div>
+        <div class="number-row">
+            <button id="clear" class="number">C</button>
+            <button id="ZERO" class="number">0</button>
+            <button id="equals" class="number">=</button>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .number-row { background: green; text-align:center; }
+</style>
+
+</body>
+</html>
